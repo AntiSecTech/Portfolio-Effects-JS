@@ -1,0 +1,68 @@
+:root {
+    --primary-background: #0a0a0f;
+    --secondary-background: #1a1b26;
+    --accent-color: #00ff9d;
+    --primary-text-color: #e0e0e0;
+}
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(
+        45deg,
+        var(--primary-background),
+        var(--secondary-background)
+    );
+    overflow: hidden; /* Keep stars contained */
+}
+
+/* Star field layers */
+.hero::before,
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, var(--primary-text-color), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 40px 70px, var(--primary-text-color), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 50px 160px, var(--primary-text-color), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90px 40px, var(--primary-text-color), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 130px 80px, var(--primary-text-color), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 160px 120px, var(--primary-text-color), rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    opacity: 0.5;
+    animation: space-travel 60s linear infinite;
+}
+
+/* Second star layer with different properties */
+.hero::after {
+    background-size: 300px 300px;
+    animation-direction: reverse;
+    opacity: 0.3;
+}
+
+/* Accent color stars */
+.hero::before {
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, var(--accent-color), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 40px 70px, var(--accent-color), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 50px 160px, var(--accent-color), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90px 40px, var(--primary-text-color), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 130px 80px, var(--primary-text-color), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 160px 120px, var(--primary-text-color), rgba(0,0,0,0));
+    filter: blur(1px);
+}
+
+/* Star movement animation */
+@keyframes space-travel {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(200px);
+    }
+}
