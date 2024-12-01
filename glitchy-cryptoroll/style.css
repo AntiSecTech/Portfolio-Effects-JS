@@ -1,0 +1,36 @@
+:root {
+    font-size: 16px;
+    font-family: monospace;
+    --background: #000;
+    --text: #fff;
+    --text-shadow: 0 0 8px #9dff00;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--background);
+    margin: 0;
+}
+
+.glitch-write {
+    color: var(--text);
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-shadow: var(--text-shadow);
+}
+
+@keyframes shake {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-2px, -2px); }
+    50% { transform: translate(2px, 2px); }
+    75% { transform: translate(-2px, 2px); }
+    100% { transform: translate(0, 0); }
+}
+
+.shake {
+    animation: shake 0.1s linear;
+} 
