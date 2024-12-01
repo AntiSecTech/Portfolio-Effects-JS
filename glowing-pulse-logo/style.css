@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+
+:root {
+    --font-logo: 'Major Mono Display', monospace;
+    --primary-text-color: #e0e0e0;
+    --accent-color: #00ff9d;
+    --accent-color-dim: #00b36e;
+}
+
+body {
+    background-color: #0a0a0f;
+}
+
+/* Logo Container */
+.logo-container {
+    font-family: var(--font-logo);
+    font-size: 1.8rem;
+}
+
+/* Logo Link */
+.logo-container a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.logo-container a:hover {
+    transform: scale(1.05);
+}
+
+/* Accent Part (Ai) - with pulsing glow */
+.logo-container span {
+    color: var(--accent-color);
+    font-weight: 900;
+    text-shadow: 
+        0 0 2px var(--accent-color),
+        0 0 10px var(--accent-color-dim);
+    animation: accentPulse 2s ease-in-out infinite;
+}
+
+/* Regular Part (TecH) - italicized */
+.logo-container i {
+    font-style: italic;
+    font-weight: 900;
+}
+
+/* Pulsing Animation for Accent */
+@keyframes accentPulse {
+    0%, 100% {
+        text-shadow: 
+            0 0 2px var(--accent-color),
+            0 0 10px var(--accent-color-dim);
+    }
+    50% {
+        text-shadow: 
+            0 0 4px var(--accent-color),
+            0 0 20px var(--accent-color),
+            0 0 30px var(--accent-color-dim);
+    }
+}
