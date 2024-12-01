@@ -1,0 +1,25 @@
+:root {
+    --accent-color: #00ff9d;
+}
+
+/* Typewriter effect styles */
+.typewriter {
+    min-height: 1.5em;
+    margin: 1rem 0;
+}
+
+.cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: var(--accent-color);
+    margin-left: 0.1rem;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% { background-color: var(--accent-color); }
+    49% { background-color: var(--accent-color); }
+    50% { background-color: transparent; }
+    99% { background-color: transparent; }
+    100% { background-color: var(--accent-color); }
+}
